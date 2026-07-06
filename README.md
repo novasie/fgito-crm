@@ -201,3 +201,12 @@ You need Docker, docker-compose and git setup on your machine. Refer [Docker doc
 		</picture>
 	</a>
 </div>
+
+Backend
+```
+cd ~/frappe-bench && bench start
+```
+Frontend
+```
+cd ~/frappe-bench/apps/crm/frontend && yarn dev
+```

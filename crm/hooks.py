@@ -1,11 +1,11 @@
 app_name = "crm"
-app_title = "Frappe CRM"
-app_publisher = "Frappe Technologies Pvt. Ltd."
-app_description = "Kick-ass Open Source CRM"
-app_email = "shariq@frappe.io"
+app_title = "FGITO CRM"
+app_publisher = "FGITO"
+app_description = "FGITO CRM"
+app_email = "support@fgito.com"
 app_license = "AGPLv3"
-app_icon_url = "/assets/crm/images/logo.svg"
-app_icon_title = "CRM"
+app_icon_url = "/assets/crm/images/logo.png"
+app_icon_title = "FGITO"
 app_icon_route = "/crm"
 
 # Apps
@@ -15,8 +15,8 @@ app_icon_route = "/crm"
 add_to_apps_screen = [
 	{
 		"name": "crm",
-		"logo": "/assets/crm/images/logo.svg",
-		"title": "CRM",
+		"logo": "/assets/crm/images/logo.png",
+		"title": "FGITO CRM",
 		"route": "/crm",
 		"has_permission": "crm.api.check_app_permission",
 	}
@@ -303,6 +303,7 @@ after_migrate = [
 	"crm.fcrm.doctype.fcrm_settings.fcrm_settings.after_migrate",
 	"crm.api.whatsapp.add_roles",
 	"crm.install.add_default_scripts",
+	"crm.setup.branding.apply_fgito_branding",
 ]
 
 standard_dropdown_items = [

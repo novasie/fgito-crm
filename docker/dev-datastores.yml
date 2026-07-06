@@ -1,0 +1,54 @@
+# Dev datastores only: MariaDB + Redis.
+# The Frappe bench (Python backend) and the Vite frontend run NATIVELY on the host
+# for live reload — this compose file only provides the databases they talk to.
+#
+#   docker compose -f docker/dev-datastores.yml up -d      # start
+#   docker compose -f docker/dev-datastores.yml down       # stop (keeps data)
+#   docker compose -f docker/dev-datastores.yml down -v    # stop + wipe data
+#
+# The native bench is pointed at these with:
+#   bench set-mariadb-host 127.0.0.1
+#   bench set-redis-cache-host    redis://127.0.0.1:6379
+#   bench set-redis-queue-host    redis://127.0.0.1:6379
+#   bench set-redis-socketio-host redis://127.0.0.1:6379
+name: fgito-crm-dev
+
+services:
+  mariadb:
+    image: mariadb:10.8
+    container_name: fgito-crm-mariadb
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --skip-character-set-client-handshake
+      - --skip-innodb-read-only-compressed # Temporary fix for MariaDB 10.6+
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:-123}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    healthcheck:
+      # ping with the root password (healthcheck.sh --connect can't auth a password-protected root)
+      test: ["CMD-SHELL", "mariadb-admin ping -uroot -p\"$$MARIADB_ROOT_PASSWORD\" --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+  redis:
+    image: redis:alpine
+    container_name: fgito-crm-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+volumes:
+  # Reuse the pre-existing data volume from the old (now-deleted) `db-stack` compose so the
+  # local site DB is preserved. If you're setting up fresh on another machine, delete the
+  # `external`/`name` lines and Compose will create a project-owned volume instead.
+  mariadb-data:
+    external: true
+    name: db-stack_mariadb-data
+  redis-data:

@@ -1,5 +1,5 @@
 {
-    "python.defaultInterpreterPath": "frappe-bench/env/bin/python",
+    "python.defaultInterpreterPath": "/Users/ddharmacharya/frappe-bench/env/bin/python",
     "debug.node.autoAttach": "disabled",
     "sqltools.connections": [
         {
@@ -7,7 +7,7 @@
                 "authProtocol": "default"
             },
             "previewLimit": 50,
-            "server": "mariadb",
+            "server": "127.0.0.1",
             "port": 3306,
             "driver": "MariaDB",
             "name": "MariaDB",
