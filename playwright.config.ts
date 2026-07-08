@@ -4,7 +4,7 @@ import { defineConfig, devices } from '@playwright/test'
 const authFile = 'e2e/.auth/user.json'
 
 /**
- * Playwright configuration for Frappe CRM E2E tests.
+ * Playwright configuration for FGITO CRM E2E tests.
  *
  * Uses the "setup project" pattern for authentication:
  * 1. The setup project logs in once and saves the storage state to a file.

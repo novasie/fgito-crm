@@ -130,12 +130,12 @@ msgstr "501-1000"
 msgid "51-200"
 msgstr "51-200"
 
-#. Paragraph text in the Frappe CRM Workspace
+#. Paragraph text in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "<b>META</b>"
 msgstr "<b>META</b>"
 
-#. Paragraph text in the Frappe CRM Workspace
+#. Paragraph text in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "<b>SHORTCUTS</b>"
 msgstr "<b>GYORSGOMBOK</b>"
@@ -145,7 +145,7 @@ msgstr "<b>GYORSGOMBOK</b>"
 msgid "<p>Dear {{ lead_name }},</p>\\n\\n<p>This is a reminder for the payment of {{ grand_total }}.</p>\\n\\n<p>Thanks,</p>\\n<p>Frappé</p>"
 msgstr "<p>Kedves {{ lead_name }},</p>\\n\\n<p>Ez egy emlékeztető a {{ grand_total }} befizetésére.</p>\\n\\n<p>Köszönöm,</p>\\n<p>Frappé</p>"
 
-#. Header text in the Frappe CRM Workspace
+#. Header text in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "<span class=\"h5\"><b>PORTAL</b></span>"
 msgstr "<span class=\"h5\"><b>PORTÁL</b></span>"
@@ -778,7 +778,7 @@ msgstr "Hozzárendelési napok"
 msgid "Assignment Days are required"
 msgstr "Hozzárendelési napok megadása kötelező"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/components/Layouts/AppSidebar.vue:612
 #: frontend/src/components/Settings/AssignmentRules/AssignmentRulesList.vue:16
@@ -1169,7 +1169,7 @@ msgstr "CRM-értesítés"
 msgid "CRM Organization"
 msgstr "CRM-szervezet"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "CRM Portal Page"
 msgstr "CRM portáloldal"
@@ -1588,7 +1588,7 @@ msgstr "Az ügyletek elvesztésének gyakori okai"
 msgid "Communication Status"
 msgstr "Kommunikációs állapot"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Communication Statuses"
 msgstr "Kommunikációs állapotok"
@@ -1705,8 +1705,8 @@ msgid "Confirm {0}"
 msgstr ""
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:274
-msgid "Connect ERPNext to Frappe CRM"
-msgstr "ERPNext összekapcsolása Frappe CRM-mel"
+msgid "Connect ERPNext to FGITO CRM"
+msgstr "ERPNext összekapcsolása FGITO CRM-mel"
 
 #: frontend/src/pages/Welcome.vue:35
 msgid "Connect your Email"
@@ -1768,7 +1768,7 @@ msgstr "Kapcsolati kép frissítve"
 
 #. Label of the contacts_tab (Tab Break) field in DocType 'CRM Deal'
 #. Label of the contacts (Table) field in DocType 'CRM Deal'
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/doctype/crm_deal/crm_deal.json
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/pages/Contact.vue:244 frontend/src/pages/MobileContact.vue:226
@@ -2099,7 +2099,7 @@ msgstr "Ügylet tulajdonosa"
 msgid "Deal Status"
 msgstr "Ügylet állapota"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Deal Statuses"
 msgstr "Ügylet állapotai"
@@ -2121,7 +2121,7 @@ msgstr "Az ügylet állapotának megadása kötelező"
 msgid "Deal value"
 msgstr "Ügylet értéke"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/pages/Deal.vue:514 frontend/src/pages/MobileContact.vue:302
 #: frontend/src/pages/MobileDeal.vue:391
@@ -3535,12 +3535,12 @@ msgstr "Űrlapszkript sikeresen frissítve"
 
 #. Name of a Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
-msgid "Frappe CRM"
-msgstr "Frappe CRM"
+msgid "FGITO CRM"
+msgstr "FGITO CRM"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:638
-msgid "Frappe CRM mobile"
-msgstr "Frappe CRM mobil"
+msgid "FGITO CRM mobile"
+msgstr "FGITO CRM mobil"
 
 #: frontend/src/components/Settings/emailConfig.js:81
 msgid "Frappe Mail Site"
@@ -3866,7 +3866,7 @@ msgstr "Bejövő hívás..."
 msgid "Incorrect current password. Please try again."
 msgstr "Helytelen jelenlegi jelszó. Kérjük, próbáld újra."
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Industries"
 msgstr "Iparágak"
@@ -4335,13 +4335,13 @@ msgstr "Érdeklődés tulajdonosa"
 msgid "Lead Owner cannot be same as the Lead Email Address"
 msgstr ""
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/components/Settings/LeadSyncing/LeadSyncSources.vue:7
 msgid "Lead Sources"
 msgstr "Érdeklődő forrásai"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Lead Statuses"
 msgstr "Érdeklődők állapotai"
@@ -4383,7 +4383,7 @@ msgstr "Érdeklődő szinkronizálási forrása sikeresen törölve"
 msgid "Lead to deal conversion pipeline"
 msgstr "Érdeklődésből ügyletté konvertálási folyamat"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/pages/InvalidPage.vue:9 frontend/src/pages/Lead.vue:369
 #: frontend/src/pages/MobileLead.vue:239
@@ -5512,7 +5512,7 @@ msgstr "Vállalkozás neve"
 msgid "Organization or a primary Contact is required to create a customer"
 msgstr ""
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/pages/MobileOrganization.vue:219
 #: frontend/src/pages/Organization.vue:257
@@ -6331,7 +6331,7 @@ msgstr "Sorok"
 #. Label of the sla (Link) field in DocType 'CRM Deal'
 #. Label of the sla_tab (Tab Break) field in DocType 'CRM Lead'
 #. Label of the sla (Link) field in DocType 'CRM Lead'
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/doctype/crm_deal/crm_deal.json
 #: crm/fcrm/doctype/crm_lead/crm_lead.json
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
@@ -7291,7 +7291,7 @@ msgstr "Sablon sikeresen frissítve"
 msgid "Templates"
 msgstr "Sablonok"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Territories"
 msgstr "Területek"
@@ -7935,7 +7935,7 @@ msgid "Visibility"
 msgstr "Láthatóság"
 
 #: frontend/src/components/SalesHierarchyBanner.vue:20
-msgid "We are changing how permissions work in Frappe CRM"
+msgid "We are changing how permissions work in FGITO CRM"
 msgstr ""
 
 #: frontend/src/components/Layouts/AppSidebar.vue:593
@@ -8120,15 +8120,15 @@ msgid "You do not have Exotel Number set in your Telephony Agent"
 msgstr ""
 
 #: frontend/src/pages/NotPermitted.vue:12
-msgid "You do not have enough permissions to access Frappe CRM. Please contact your administrator if you believe this is an error."
-msgstr "Nincs elegendő jogosultsága a Frappe CRM eléréséhez. Ha úgy gondolja, hogy hiba történt, kérjük, vegye fel a kapcsolatot a rendszergazdával."
+msgid "You do not have enough permissions to access FGITO CRM. Please contact your administrator if you believe this is an error."
+msgstr "Nincs elegendő jogosultsága a FGITO CRM eléréséhez. Ha úgy gondolja, hogy hiba történt, kérjük, vegye fel a kapcsolatot a rendszergazdával."
 
 #: crm/integrations/exotel/handler.py:92
 msgid "You do not have mobile number set in your Telephony Agent"
 msgstr ""
 
 #: crm/www/crm.py:18
-msgid "You do not have permission to access Frappe CRM"
+msgid "You do not have permission to access FGITO CRM"
 msgstr ""
 
 #: frontend/src/data/document.js:45

@@ -130,12 +130,12 @@ msgstr "crwdns152679:0crwdne152679:0"
 msgid "51-200"
 msgstr "crwdns152681:0crwdne152681:0"
 
-#. Paragraph text in the Frappe CRM Workspace
+#. Paragraph text in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "<b>META</b>"
 msgstr "crwdns152683:0crwdne152683:0"
 
-#. Paragraph text in the Frappe CRM Workspace
+#. Paragraph text in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "<b>SHORTCUTS</b>"
 msgstr "crwdns152685:0crwdne152685:0"
@@ -145,7 +145,7 @@ msgstr "crwdns152685:0crwdne152685:0"
 msgid "<p>Dear {{ lead_name }},</p>\\n\\n<p>This is a reminder for the payment of {{ grand_total }}.</p>\\n\\n<p>Thanks,</p>\\n<p>Frappé</p>"
 msgstr "crwdns152687:0{{ lead_name }}crwdnd152687:0{{ grand_total }}crwdne152687:0"
 
-#. Header text in the Frappe CRM Workspace
+#. Header text in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "<span class=\"h5\"><b>PORTAL</b></span>"
 msgstr "crwdns152689:0crwdne152689:0"
@@ -778,7 +778,7 @@ msgstr "crwdns196096:0crwdne196096:0"
 msgid "Assignment Days are required"
 msgstr "crwdns196098:0crwdne196098:0"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/components/Layouts/AppSidebar.vue:612
 #: frontend/src/components/Settings/AssignmentRules/AssignmentRulesList.vue:16
@@ -1169,7 +1169,7 @@ msgstr "crwdns152863:0crwdne152863:0"
 msgid "CRM Organization"
 msgstr "crwdns152865:0crwdne152865:0"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "CRM Portal Page"
 msgstr "crwdns152867:0crwdne152867:0"
@@ -1588,7 +1588,7 @@ msgstr "crwdns156200:0crwdne156200:0"
 msgid "Communication Status"
 msgstr "crwdns152959:0crwdne152959:0"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Communication Statuses"
 msgstr "crwdns152961:0crwdne152961:0"
@@ -1705,7 +1705,7 @@ msgid "Confirm {0}"
 msgstr "crwdns199516:0{0}crwdne199516:0"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:274
-msgid "Connect ERPNext to Frappe CRM"
+msgid "Connect ERPNext to FGITO CRM"
 msgstr "crwdns200070:0crwdne200070:0"
 
 #: frontend/src/pages/Welcome.vue:35
@@ -1768,7 +1768,7 @@ msgstr "crwdns156216:0crwdne156216:0"
 
 #. Label of the contacts_tab (Tab Break) field in DocType 'CRM Deal'
 #. Label of the contacts (Table) field in DocType 'CRM Deal'
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/doctype/crm_deal/crm_deal.json
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/pages/Contact.vue:244 frontend/src/pages/MobileContact.vue:226
@@ -2099,7 +2099,7 @@ msgstr "crwdns153037:0crwdne153037:0"
 msgid "Deal Status"
 msgstr "crwdns153039:0crwdne153039:0"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Deal Statuses"
 msgstr "crwdns153041:0crwdne153041:0"
@@ -2121,7 +2121,7 @@ msgstr "crwdns200076:0crwdne200076:0"
 msgid "Deal value"
 msgstr "crwdns156260:0crwdne156260:0"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/pages/Deal.vue:514 frontend/src/pages/MobileContact.vue:302
 #: frontend/src/pages/MobileDeal.vue:391
@@ -3535,11 +3535,11 @@ msgstr "crwdns153279:0crwdne153279:0"
 
 #. Name of a Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
-msgid "Frappe CRM"
+msgid "FGITO CRM"
 msgstr "crwdns153281:0crwdne153281:0"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:638
-msgid "Frappe CRM mobile"
+msgid "FGITO CRM mobile"
 msgstr "crwdns156384:0crwdne156384:0"
 
 #: frontend/src/components/Settings/emailConfig.js:81
@@ -3866,7 +3866,7 @@ msgstr "crwdns153349:0crwdne153349:0"
 msgid "Incorrect current password. Please try again."
 msgstr "crwdns200262:0crwdne200262:0"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Industries"
 msgstr "crwdns153351:0crwdne153351:0"
@@ -4335,13 +4335,13 @@ msgstr "crwdns153433:0crwdne153433:0"
 msgid "Lead Owner cannot be same as the Lead Email Address"
 msgstr "crwdns153435:0crwdne153435:0"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/components/Settings/LeadSyncing/LeadSyncSources.vue:7
 msgid "Lead Sources"
 msgstr "crwdns153437:0crwdne153437:0"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Lead Statuses"
 msgstr "crwdns153439:0crwdne153439:0"
@@ -4383,7 +4383,7 @@ msgstr "crwdns196520:0crwdne196520:0"
 msgid "Lead to deal conversion pipeline"
 msgstr "crwdns156434:0crwdne156434:0"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/pages/InvalidPage.vue:9 frontend/src/pages/Lead.vue:369
 #: frontend/src/pages/MobileLead.vue:239
@@ -5512,7 +5512,7 @@ msgstr "crwdns153675:0crwdne153675:0"
 msgid "Organization or a primary Contact is required to create a customer"
 msgstr "crwdns203699:0crwdne203699:0"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/pages/MobileOrganization.vue:219
 #: frontend/src/pages/Organization.vue:257
@@ -6331,7 +6331,7 @@ msgstr "crwdns153833:0crwdne153833:0"
 #. Label of the sla (Link) field in DocType 'CRM Deal'
 #. Label of the sla_tab (Tab Break) field in DocType 'CRM Lead'
 #. Label of the sla (Link) field in DocType 'CRM Lead'
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/doctype/crm_deal/crm_deal.json
 #: crm/fcrm/doctype/crm_lead/crm_lead.json
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
@@ -7291,7 +7291,7 @@ msgstr "crwdns156644:0crwdne156644:0"
 msgid "Templates"
 msgstr "crwdns196860:0crwdne196860:0"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Territories"
 msgstr "crwdns153959:0crwdne153959:0"
@@ -7935,7 +7935,7 @@ msgid "Visibility"
 msgstr "crwdns196912:0crwdne196912:0"
 
 #: frontend/src/components/SalesHierarchyBanner.vue:20
-msgid "We are changing how permissions work in Frappe CRM"
+msgid "We are changing how permissions work in FGITO CRM"
 msgstr "crwdns203745:0crwdne203745:0"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:593
@@ -8120,7 +8120,7 @@ msgid "You do not have Exotel Number set in your Telephony Agent"
 msgstr "crwdns154099:0crwdne154099:0"
 
 #: frontend/src/pages/NotPermitted.vue:12
-msgid "You do not have enough permissions to access Frappe CRM. Please contact your administrator if you believe this is an error."
+msgid "You do not have enough permissions to access FGITO CRM. Please contact your administrator if you believe this is an error."
 msgstr "crwdns160948:0crwdne160948:0"
 
 #: crm/integrations/exotel/handler.py:92
@@ -8128,7 +8128,7 @@ msgid "You do not have mobile number set in your Telephony Agent"
 msgstr "crwdns154101:0crwdne154101:0"
 
 #: crm/www/crm.py:18
-msgid "You do not have permission to access Frappe CRM"
+msgid "You do not have permission to access FGITO CRM"
 msgstr "crwdns161452:0crwdne161452:0"
 
 #: frontend/src/data/document.js:45

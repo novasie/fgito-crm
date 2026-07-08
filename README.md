@@ -1,10 +1,10 @@
 <div align="center" markdown="1">
 
 <a href="https://frappe.io/products/crm">
-    <img src=".github/logo.svg" height="80" alt="Frappe CRM Logo">
+    <img src=".github/logo.svg" height="80" alt="FGITO CRM Logo">
 </a>
 
-<h1>Frappe CRM</h1>
+<h1>FGITO CRM</h1>
 
 **Simplify Sales, Amplify Relationships**
 
@@ -13,7 +13,7 @@
 <div>
     <picture>
         <source media="(prefers-color-scheme: dark)" srcset=".github/screenshots/FrappeCRMHeroImage.png">
-        <img width="1402" alt="Frappe CRM Hero Image" src=".github/screenshots/FrappeCRMHeroImage.png">
+        <img width="1402" alt="FGITO CRM Hero Image" src=".github/screenshots/FrappeCRMHeroImage.png">
     </picture>
 </div>
 
@@ -21,13 +21,13 @@
 
 </div>
 
-## Frappe CRM
+## FGITO CRM
 
-Frappe CRM is a simple, affordable, open-source CRM tool designed for modern sales teams with unlimited users. Frappe CRM is crafted for providing a great user experience, packed with features for core CRM activities helping you build strong customer relationships while keeping things clean and organised.
+FGITO CRM is a simple, affordable, open-source CRM tool designed for modern sales teams with unlimited users. FGITO CRM is crafted for providing a great user experience, packed with features for core CRM activities helping you build strong customer relationships while keeping things clean and organised.
 
 ### Motivation
 
-The motivation behind building Frappe CRM stems from the need for a simple, customizable, and open-source solution tailored to modern business needs. Many existing CRMs are either too complex, overly generic, or locked behind steep pricing models that hinder accessibility and flexibility. Frappe CRM was designed to bridge this gap, offering a tool that empowers businesses to manage their customer relationships seamlessly while being easy to adapt to specific workflows. Built on the Frappe framework, it prioritizes usability, extensibility, and affordability, making it an ideal choice for growing teams and organizations looking for a CRM that aligns with their unique processes.
+The motivation behind building FGITO CRM stems from the need for a simple, customizable, and open-source solution tailored to modern business needs. Many existing CRMs are either too complex, overly generic, or locked behind steep pricing models that hinder accessibility and flexibility. FGITO CRM was designed to bridge this gap, offering a tool that empowers businesses to manage their customer relationships seamlessly while being easy to adapt to specific workflows. Built on the Frappe framework, it prioritizes usability, extensibility, and affordability, making it an ideal choice for growing teams and organizations looking for a CRM that aligns with their unique processes.
 
 ### Key Features
 
@@ -108,7 +108,7 @@ Get started with your personal or business site with a few clicks on Frappe Clou
 
 ### Self Hosting
 
-Follow these steps to set up Frappe CRM in production:
+Follow these steps to set up FGITO CRM in production:
 
 **Step 1**: Download the easy install script
 
@@ -133,7 +133,7 @@ Replace the following parameters with your values:
 -   `email.example.com`: Your email address
 -   `subdomain.domain.tld`: Your domain name where CRM will be hosted
 
-The script will set up a production-ready instance of Frappe CRM with all the necessary configurations in about 5 minutes.
+The script will set up a production-ready instance of FGITO CRM with all the necessary configurations in about 5 minutes.
 
 ## Getting Started (Development)
 
@@ -157,7 +157,7 @@ The script will set up a production-ready instance of Frappe CRM with all the ne
     ```
 1. Now, you can access the site on vite dev server at `http://sitename.localhost:8080`
 
-**Note:** You'll find all the code related to Frappe CRM's frontend inside `frappe-bench/apps/crm/frontend`
+**Note:** You'll find all the code related to FGITO CRM's frontend inside `frappe-bench/apps/crm/frontend`
 
 ### Docker
 

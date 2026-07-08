@@ -51,10 +51,27 @@ def apply_fgito_branding():
 			},
 		)
 
+		# Desk workspace: /app/frappe-crm -> /app/fgito-crm (rename the record).
+		# Duplicate-safe both ways: if migrate already imported the renamed fixture
+		# ("FGITO CRM"), drop the stale "Frappe CRM"; otherwise rename in place.
+		_rename_workspace("Frappe CRM", PRODUCT_NAME)
+
 		frappe.clear_cache()
 	except Exception:
 		# Branding must never break a migrate.
 		frappe.log_error(frappe.get_traceback(), "FGITO branding seed failed")
+
+
+def _rename_workspace(old: str, new: str):
+	if frappe.db.exists("Workspace", old):
+		if frappe.db.exists("Workspace", new):
+			# migrate already imported the renamed fixture -> drop the stale one
+			frappe.delete_doc("Workspace", old, force=True, ignore_permissions=True)
+		else:
+			frappe.rename_doc("Workspace", old, new, force=True)  # no ignore_permissions kwarg in v15
+	# enforce brand label/title regardless of path (rename_doc leaves title untouched)
+	if frappe.db.exists("Workspace", new):
+		frappe.db.set_value("Workspace", new, {"label": new, "title": new})
 
 
 def _set_single(doctype: str, values: dict):

@@ -1,6 +1,6 @@
 # fgito-crm — Build Phases
 
-Roadmap for turning the Frappe CRM fork into our internal, white-labeled CRM with WhatsApp
+Roadmap for turning the FGITO CRM fork into our internal, white-labeled CRM with WhatsApp
 lead capture + chat and Zoho email. **We pick one phase at a time.** Setup details live in
 [DEV_SETUP.md](./DEV_SETUP.md).
 
@@ -26,7 +26,7 @@ Legend: ✅ done · 🔜 next · ⬜ planned
 
 ## 🔜 Phase 1 — White-label
 
-**Goal:** replace all "Frappe CRM" branding with our internal name/logo.
+**Goal:** replace all "FGITO CRM" branding with our internal name/logo.
 
 **Needs from us:** the internal **brand name** + a **logo** file (SVG/PNG) if we have one.
 
@@ -44,7 +44,7 @@ Legend: ✅ done · 🔜 next · ⬜ planned
   - Assets: `frontend/public/favicon.png`, `crm/public/manifest/*`, `.github/logo.*`
 - Optional: hide the "Login to Frappe Cloud" UI (`composables/frappecloud.js`, `UserDropdown.vue`).
 
-**Done when:** brand name/logo/favicon show everywhere; `grep -ri "frappe crm"` in
+**Done when:** brand name/logo/favicon show everywhere; `grep -ri "FGITO CRM"` in
 `frontend/src` + `crm/` returns only intentional leftovers.
 
 ---

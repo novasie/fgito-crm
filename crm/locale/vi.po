@@ -130,12 +130,12 @@ msgstr "501-1000"
 msgid "51-200"
 msgstr "51-200"
 
-#. Paragraph text in the Frappe CRM Workspace
+#. Paragraph text in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "<b>META</b>"
 msgstr "<b>META</b>"
 
-#. Paragraph text in the Frappe CRM Workspace
+#. Paragraph text in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "<b>SHORTCUTS</b>"
 msgstr "<b>Lối Tắt</b>"
@@ -145,7 +145,7 @@ msgstr "<b>Lối Tắt</b>"
 msgid "<p>Dear {{ lead_name }},</p>\\n\\n<p>This is a reminder for the payment of {{ grand_total }}.</p>\\n\\n<p>Thanks,</p>\\n<p>Frappé</p>"
 msgstr "<p>Kính gửi {{ lead_name }},</p>\\n\\n<p>Đây là lời nhắc thanh toán cho {{ grand_total }}.</p>\\n\\n<p>Cảm ơn,</p>\\n<p>Frappé</p>"
 
-#. Header text in the Frappe CRM Workspace
+#. Header text in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "<span class=\"h5\"><b>PORTAL</b></span>"
 msgstr "<span class=\"h5\"><b>CỔNG THÔNG TIN</b></span>"
@@ -778,7 +778,7 @@ msgstr "Ngày phân công"
 msgid "Assignment Days are required"
 msgstr "Yêu cầu Ngày Phân Công"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/components/Layouts/AppSidebar.vue:612
 #: frontend/src/components/Settings/AssignmentRules/AssignmentRulesList.vue:16
@@ -1169,7 +1169,7 @@ msgstr "Thông Báo CRM"
 msgid "CRM Organization"
 msgstr "Tổ Chức CRM"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "CRM Portal Page"
 msgstr "Trang Cổng Thông Tin CRM"
@@ -1588,7 +1588,7 @@ msgstr "Những lý do phổ biến để mất deals"
 msgid "Communication Status"
 msgstr "Trạng Thái Giao Tiếp"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Communication Statuses"
 msgstr "Các Trạng Thái Giao Tiếp"
@@ -1705,7 +1705,7 @@ msgid "Confirm {0}"
 msgstr "Xác nhận {0}"
 
 #: frontend/src/components/Settings/ERPNextSettings.vue:274
-msgid "Connect ERPNext to Frappe CRM"
+msgid "Connect ERPNext to FGITO CRM"
 msgstr ""
 
 #: frontend/src/pages/Welcome.vue:35
@@ -1768,7 +1768,7 @@ msgstr "Đã cập nhật hình liên hệ"
 
 #. Label of the contacts_tab (Tab Break) field in DocType 'CRM Deal'
 #. Label of the contacts (Table) field in DocType 'CRM Deal'
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/doctype/crm_deal/crm_deal.json
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/pages/Contact.vue:244 frontend/src/pages/MobileContact.vue:226
@@ -2099,7 +2099,7 @@ msgstr "Chủ giao dịch"
 msgid "Deal Status"
 msgstr "Trạng thái Deal"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Deal Statuses"
 msgstr "Trạng thái Deal"
@@ -2121,7 +2121,7 @@ msgstr ""
 msgid "Deal value"
 msgstr "Giá trị Deal"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/pages/Deal.vue:514 frontend/src/pages/MobileContact.vue:302
 #: frontend/src/pages/MobileDeal.vue:391
@@ -3535,12 +3535,12 @@ msgstr "Đã cập nhật Script biểu mẫu thành công"
 
 #. Name of a Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
-msgid "Frappe CRM"
-msgstr "Frappe CRM"
+msgid "FGITO CRM"
+msgstr "FGITO CRM"
 
 #: frontend/src/components/Layouts/AppSidebar.vue:638
-msgid "Frappe CRM mobile"
-msgstr "Frappe CRM di động"
+msgid "FGITO CRM mobile"
+msgstr "FGITO CRM di động"
 
 #: frontend/src/components/Settings/emailConfig.js:81
 msgid "Frappe Mail Site"
@@ -3866,7 +3866,7 @@ msgstr "Cuộc gọi đến..."
 msgid "Incorrect current password. Please try again."
 msgstr ""
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Industries"
 msgstr "Ngành"
@@ -4335,13 +4335,13 @@ msgstr "Chủ sở hữu khách hàng tiềm năng"
 msgid "Lead Owner cannot be same as the Lead Email Address"
 msgstr "Chủ sở hữu khách hàng tiềm năng không thể giống với Địa chỉ Email khách hàng tiềm năng"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/components/Settings/LeadSyncing/LeadSyncSources.vue:7
 msgid "Lead Sources"
 msgstr "Nguồn Lead"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Lead Statuses"
 msgstr "Trạng thái Lead"
@@ -4383,7 +4383,7 @@ msgstr "Nguồn đồng bộ Lead đã được xóa thành công"
 msgid "Lead to deal conversion pipeline"
 msgstr "Pipeline chuyển đổi Lead sang Deal"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/pages/InvalidPage.vue:9 frontend/src/pages/Lead.vue:369
 #: frontend/src/pages/MobileLead.vue:239
@@ -5512,7 +5512,7 @@ msgstr "Tên tổ chức"
 msgid "Organization or a primary Contact is required to create a customer"
 msgstr ""
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 #: frontend/src/pages/MobileOrganization.vue:219
 #: frontend/src/pages/Organization.vue:257
@@ -6331,7 +6331,7 @@ msgstr "Hàng"
 #. Label of the sla (Link) field in DocType 'CRM Deal'
 #. Label of the sla_tab (Tab Break) field in DocType 'CRM Lead'
 #. Label of the sla (Link) field in DocType 'CRM Lead'
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/doctype/crm_deal/crm_deal.json
 #: crm/fcrm/doctype/crm_lead/crm_lead.json
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
@@ -7291,7 +7291,7 @@ msgstr "Mẫu đã được Cập nhật thành công"
 msgid "Templates"
 msgstr "Mẫu"
 
-#. Label of a shortcut in the Frappe CRM Workspace
+#. Label of a shortcut in the FGITO CRM Workspace
 #: crm/fcrm/workspace/frappe_crm/frappe_crm.json
 msgid "Territories"
 msgstr "Các Lãnh thổ"
@@ -7935,7 +7935,7 @@ msgid "Visibility"
 msgstr "Khả năng hiển thị"
 
 #: frontend/src/components/SalesHierarchyBanner.vue:20
-msgid "We are changing how permissions work in Frappe CRM"
+msgid "We are changing how permissions work in FGITO CRM"
 msgstr ""
 
 #: frontend/src/components/Layouts/AppSidebar.vue:593
@@ -8120,16 +8120,16 @@ msgid "You do not have Exotel Number set in your Telephony Agent"
 msgstr "Bạn chưa đặt Số Exotel trong Điện thoại Viên của mình"
 
 #: frontend/src/pages/NotPermitted.vue:12
-msgid "You do not have enough permissions to access Frappe CRM. Please contact your administrator if you believe this is an error."
-msgstr "Bạn không có đủ quyền để truy cập Frappe CRM. Vui lòng liên hệ với quản trị viên của bạn nếu bạn tin rằng đây là lỗi."
+msgid "You do not have enough permissions to access FGITO CRM. Please contact your administrator if you believe this is an error."
+msgstr "Bạn không có đủ quyền để truy cập FGITO CRM. Vui lòng liên hệ với quản trị viên của bạn nếu bạn tin rằng đây là lỗi."
 
 #: crm/integrations/exotel/handler.py:92
 msgid "You do not have mobile number set in your Telephony Agent"
 msgstr "Bạn chưa đặt số di động trong Điện thoại Viên của mình"
 
 #: crm/www/crm.py:18
-msgid "You do not have permission to access Frappe CRM"
-msgstr "Bạn không có quyền truy cập Frappe CRM"
+msgid "You do not have permission to access FGITO CRM"
+msgstr "Bạn không có quyền truy cập FGITO CRM"
 
 #: frontend/src/data/document.js:45
 msgid "You do not have permission to access this document"
