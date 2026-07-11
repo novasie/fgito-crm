@@ -201,6 +201,7 @@ def get_call_log(name: str):
 			"from",
 			"to",
 			"note",
+			"custom_call_summary",
 			"recording_url",
 			"recording_url_path",
 			"reference_doctype",

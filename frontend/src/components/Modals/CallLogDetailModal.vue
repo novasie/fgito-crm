@@ -132,6 +132,14 @@
                   />
                 </FadedScrollableDiv>
               </div>
+              <div
+                v-else-if="field.name == 'custom_call_summary'"
+                class="w-full whitespace-pre-wrap break-words rounded border px-2 py-1.5 text-base text-ink-gray-7"
+              >
+                <FadedScrollableDiv class="max-h-24 overflow-y-auto">
+                  {{ field.value }}
+                </FadedScrollableDiv>
+              </div>
               <div v-else :class="field.color ? `text-${field.color}-600` : ''">
                 {{ field.value }}
               </div>
@@ -326,6 +334,14 @@ const detailFields = computed(() => {
       icon: TaskIcon,
       name: 'task',
       value: data._tasks?.[0] ?? null,
+    },
+    {
+      icon: h(FeatherIcon, {
+        name: 'file-text',
+        class: 'h-4 w-4',
+      }),
+      name: 'custom_call_summary',
+      value: data.custom_call_summary,
     },
   ]
 

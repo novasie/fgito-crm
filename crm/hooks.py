@@ -305,6 +305,7 @@ after_migrate = [
 	"crm.install.add_default_scripts",
 	"crm.setup.branding.apply_fgito_branding",
 	"crm.setup.lead_config.apply_fgito_lead_config",
+	"crm.setup.call_config.apply_fgito_call_config",
 ]
 
 standard_dropdown_items = [

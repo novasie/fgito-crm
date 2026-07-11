@@ -35,6 +35,10 @@ def after_install(force=False):
 	from crm.setup.lead_config import apply_fgito_lead_config
 
 	apply_fgito_lead_config()
+
+	from crm.setup.call_config import apply_fgito_call_config
+
+	apply_fgito_call_config()
 	frappe.db.commit()
 
 
