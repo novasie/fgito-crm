@@ -304,6 +304,7 @@ after_migrate = [
 	"crm.api.whatsapp.add_roles",
 	"crm.install.add_default_scripts",
 	"crm.setup.branding.apply_fgito_branding",
+	"crm.setup.lead_config.apply_fgito_lead_config",
 ]
 
 standard_dropdown_items = [

@@ -31,6 +31,10 @@ def after_install(force=False):
 	create_default_manager_dashboard(force)
 	create_assignment_rule_custom_fields()
 	add_assignment_rule_property_setters()
+
+	from crm.setup.lead_config import apply_fgito_lead_config
+
+	apply_fgito_lead_config()
 	frappe.db.commit()
 
 
