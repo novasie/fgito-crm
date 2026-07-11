@@ -1,5 +1,17 @@
 @import 'frappe-ui/style.css';
 
+/* Hide scrollbars across the whole app while keeping scroll functional.
+   Applies to the page and every inner scroll container (dialogs, panels, lists). */
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / old Edge */
+}
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge (WebKit/Blink) */
+  width: 0;
+  height: 0;
+}
+
 @layer components {
   .prose-f {
     @apply break-all
