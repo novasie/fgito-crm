@@ -8,9 +8,10 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 TAG="${TAG:-latest}"
 
-# The prod build compiles the frappe-ui SUBMODULE from source (so submodule tweaks ship
-# to prod), so it must be checked out before we build.
+# The prod build compiles the frappe-ui submodule (novasie/frappe-ui @ fgito) from source,
+# so it must be checked out before we build. `sync` applies the .gitmodules URL after a pull.
 echo "==> ensuring frappe-ui submodule is checked out"
+git -C "$REPO_DIR" submodule sync --recursive
 git -C "$REPO_DIR" submodule update --init --recursive
 
 echo "==> building fgito-crm:${TAG} from ${REPO_DIR}"
