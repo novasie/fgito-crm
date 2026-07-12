@@ -1,0 +1,36 @@
+# FGITO CRM — shared database, server side (Azure VM).
+#
+# Runs ONLY MariaDB. Bound to 127.0.0.1 so it is reachable exclusively through the
+# SSH tunnel (setup/db-tunnel.sh) — never expose 3306 on the Azure NSG.
+#
+# Usage on the VM:
+#   1) put a strong password below (or export MARIADB_ROOT_PASSWORD before `up`)
+#   2) docker compose -f db-only.yml up -d
+#   3) confirm: docker compose -f db-only.yml ps   (healthy)
+#
+# Data persists in the named volume `fgito-db` (survives container recreation).
+
+services:
+  mariadb:
+    image: mariadb:10.8
+    container_name: fgito-db
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --skip-character-set-client-handshake
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:-change-me-strong-password}
+    ports:
+      # 127.0.0.1 only: the tunnel forwards to this; the public internet cannot reach it.
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - fgito-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-uroot", "-p${MARIADB_ROOT_PASSWORD:-change-me-strong-password}", "--silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  fgito-db:

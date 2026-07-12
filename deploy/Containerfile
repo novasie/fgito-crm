@@ -1,0 +1,73 @@
+# FGITO CRM — custom production image, built from LOCAL source (the checked-out repo).
+#
+# Build context = the repo root (the fork IS the `crm` app). Nothing is cloned from
+# GitHub, so a private repo needs no build-time auth — you just `git pull` on the VM
+# and build. The production `vite build` uses the npm `frappe-ui` package, so the
+# `frappe-ui` git submodule is NOT needed here (it's dev-only).
+#
+# Build:  docker build -t fgito-crm:latest -f deploy/Containerfile .   (see build-on-vm.sh)
+
+ARG FRAPPE_BRANCH=version-15
+ARG FRAPPE_IMAGE_PREFIX=frappe
+
+# ---------- build stage ----------
+FROM ${FRAPPE_IMAGE_PREFIX}/build:${FRAPPE_BRANCH} AS builder
+
+ARG FRAPPE_BRANCH=version-15
+ARG FRAPPE_PATH=https://github.com/frappe/frappe
+
+USER frappe
+
+RUN bench init \
+      --frappe-branch=${FRAPPE_BRANCH} \
+      --frappe-path=${FRAPPE_PATH} \
+      --no-procfile --no-backups --skip-redis-config-generation --verbose \
+      /home/frappe/frappe-bench
+
+WORKDIR /home/frappe/frappe-bench
+
+# Bring in the local app source as the `crm` app (context is trimmed by .dockerignore).
+COPY --chown=frappe:frappe . apps/crm
+
+# NO_SOURCEMAP keeps the memory-heavy sourcemaps out of the prod image (smaller image,
+# fits low-RAM build hosts); it's read by frontend/vite.config.js during the frontend
+# build that `bench build` runs. NODE_OPTIONS raises node's heap ceiling for the build.
+ENV NO_SOURCEMAP=1 \
+    NODE_OPTIONS=--max-old-space-size=3072
+
+# Register the app (editable install + apps.txt), install frontend deps, then build assets.
+# `bench build` builds the Vue SPA via [tool.bench.assets] in pyproject.toml + frappe's own
+# assets, and collects everything into sites/assets.
+RUN ./env/bin/pip install --no-cache-dir -e apps/crm && \
+    ls -1 apps > sites/apps.txt && \
+    (cd apps/crm/frontend && yarn install) && \
+    bench build && \
+    echo "{}" > sites/common_site_config.json && \
+    find apps -mindepth 1 -path "*/.git" | xargs rm -fr
+
+# ---------- runtime stage ----------
+FROM ${FRAPPE_IMAGE_PREFIX}/base:${FRAPPE_BRANCH} AS backend
+
+USER frappe
+
+COPY --from=builder --chown=frappe:frappe /home/frappe/frappe-bench /home/frappe/frappe-bench
+
+WORKDIR /home/frappe/frappe-bench
+
+# Bake assets into an image layer; the entrypoint links them into the sites volume at start.
+RUN cp -r /home/frappe/frappe-bench/sites/assets /home/frappe/frappe-bench/assets && \
+    rm -rf /home/frappe/frappe-bench/sites/assets
+
+VOLUME [ \
+  "/home/frappe/frappe-bench/sites", \
+  "/home/frappe/frappe-bench/logs" \
+]
+
+USER root
+COPY deploy/resources/main-entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY deploy/resources/start.sh /usr/local/bin/start.sh
+RUN chmod 755 /usr/local/bin/entrypoint.sh /usr/local/bin/start.sh
+
+USER frappe
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD ["start.sh"]

@@ -98,7 +98,10 @@ export default defineConfig(async ({ mode }) => {
       buildConfig: {
         indexHtmlPath: '../crm/www/crm.html',
         emptyOutDir: true,
-        sourcemap: true,
+        // Sourcemaps are memory-heavy to generate; the Docker prod build sets
+        // NO_SOURCEMAP=1 to skip them (smaller image, fits low-RAM build hosts).
+        // Local dev/build keep them on by default.
+        sourcemap: process.env.NO_SOURCEMAP !== '1',
       },
     }),
   )

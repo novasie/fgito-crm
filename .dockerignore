@@ -1,0 +1,17 @@
+# Keep the Docker build context small. The image build (deploy/Containerfile) does a
+# fresh `yarn install` + `yarn build`, so none of these are needed and some are huge.
+.git
+.gitmodules
+frappe-ui/          # 498 MB dev-only submodule — prod build uses the npm frappe-ui
+**/node_modules
+env/
+sites/
+logs/
+graphify-out/
+**/__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+# build artifacts (regenerated inside the image)
+crm/public/frontend/
+crm/www/crm.html
