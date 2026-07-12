@@ -2,8 +2,9 @@
 #
 # Build context = the repo root (the fork IS the `crm` app). Nothing is cloned from
 # GitHub, so a private repo needs no build-time auth — you just `git pull` on the VM
-# and build. The production `vite build` uses the npm `frappe-ui` package, so the
-# `frappe-ui` git submodule is NOT needed here (it's dev-only).
+# and build. The prod `vite build` uses the LOCAL `frappe-ui` submodule (same as dev,
+# see frontend/vite.config.js) so submodule customizations ship to production — the
+# submodule must be checked out before building (build-on-vm.sh runs submodule update).
 #
 # Build:  docker build -t fgito-crm:latest -f deploy/Containerfile .   (see build-on-vm.sh)
 
@@ -40,6 +41,7 @@ ENV NO_SOURCEMAP=1 \
 # assets, and collects everything into sites/assets.
 RUN ./env/bin/pip install --no-cache-dir -e apps/crm && \
     ls -1 apps > sites/apps.txt && \
+    (cd apps/crm/frappe-ui && yarn install) && \
     (cd apps/crm/frontend && yarn install) && \
     bench build && \
     echo "{}" > sites/common_site_config.json && \

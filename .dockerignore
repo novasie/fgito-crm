@@ -1,9 +1,14 @@
 # Keep the Docker build context small. The image build (deploy/Containerfile) does a
-# fresh `yarn install` + `yarn build`, so none of these are needed and some are huge.
+# fresh `yarn install` + `yarn build`, so none of the excluded items are needed.
+#
+# NOTE: the frappe-ui submodule SOURCE is intentionally INCLUDED now — the prod build
+# uses it (see frontend/vite.config.js) so submodule customizations ship to production.
+# We only skip its bulky, regenerated parts (node_modules, docs, .git).
 .git
+**/.git
 .gitmodules
-frappe-ui/          # 498 MB dev-only submodule — prod build uses the npm frappe-ui
 **/node_modules
+frappe-ui/docs
 env/
 sites/
 logs/

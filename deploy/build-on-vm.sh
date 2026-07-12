@@ -8,6 +8,11 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 TAG="${TAG:-latest}"
 
+# The prod build compiles the frappe-ui SUBMODULE from source (so submodule tweaks ship
+# to prod), so it must be checked out before we build.
+echo "==> ensuring frappe-ui submodule is checked out"
+git -C "$REPO_DIR" submodule update --init --recursive
+
 echo "==> building fgito-crm:${TAG} from ${REPO_DIR}"
 docker build \
   --tag "fgito-crm:${TAG}" \

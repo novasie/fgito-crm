@@ -110,28 +110,31 @@ export default defineConfig(async ({ mode }) => {
 })
 
 async function importFrappeUIPlugin(isDev, config) {
-  if (isDev) {
-    try {
-      // Check if local frappe-ui has the vite plugin file
-      const fs = await import('node:fs')
-      const localVitePluginPath = path.resolve(__dirname, '../frappe-ui/vite')
+  // Use the local frappe-ui submodule whenever it's checked out — in BOTH dev and the
+  // production/Docker build — so customizations made in the submodule (e.g. the 80vh
+  // dialog cap) actually ship to production. Falls back to the npm `frappe-ui` package
+  // only when the submodule isn't present (e.g. a clean npm-only checkout).
+  try {
+    const fs = await import('node:fs')
+    const localVitePluginPath = path.resolve(__dirname, '../frappe-ui/vite')
 
-      if (fs.existsSync(localVitePluginPath)) {
-        const module = await import('../frappe-ui/vite')
-        console.info('Local frappe-ui vite plugin found, using local plugin')
-        config.resolve.alias = getAliases(config)
-        return module.default
-      } else {
-        console.warn('Local frappe-ui vite plugin not found, using npm package')
-      }
-    } catch (error) {
-      console.warn(
-        'Local frappe-ui not found, falling back to npm package:',
-        error.message,
+    if (fs.existsSync(localVitePluginPath)) {
+      const module = await import('../frappe-ui/vite')
+      console.info(
+        `Local frappe-ui submodule found — using it (${isDev ? 'dev' : 'build'})`,
       )
+      config.resolve.alias = getAliases(config)
+      return module.default
+    } else {
+      console.warn('Local frappe-ui submodule not found, using npm package')
     }
+  } catch (error) {
+    console.warn(
+      'Local frappe-ui not usable, falling back to npm package:',
+      error.message,
+    )
   }
-  // Fall back to npm package if local import fails
+  // Fall back to npm package if the submodule isn't present / import fails
   const module = await import('frappe-ui/vite')
   return module.default
 }
