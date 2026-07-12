@@ -1,0 +1,83 @@
+# FGITO CRM — LOCAL dev dependencies (the primary / "origin" Mac).
+#
+# Runs MariaDB + Redis in Docker on THIS Mac. The Frappe app itself runs NATIVELY on the
+# host (`bench start` + `yarn dev`) and reaches these over 127.0.0.1. This is the setup the
+# main development machine uses — the one that holds the real data. It is DIFFERENT from the
+# shared Azure-DB-over-SSH-tunnel path (secondary laptops / CEO) — see README.md.
+#
+#   This Mac
+#   ┌────────────────────────────────────────────────┐
+#   │  bench start  +  yarn dev     (native)          │
+#   │        │ 127.0.0.1                              │
+#   │        ▼                                        │
+#   │  Docker:  MariaDB :3306        Redis :6379      │
+#   └────────────────────────────────────────────────┘
+#
+# Usage:
+#   docker compose -f setup/local-dev.yml up -d      # start DB + Redis (safe to re-run)
+#   docker compose -f setup/local-dev.yml ps         # check health
+#   docker compose -f setup/local-dev.yml stop       # stop (data persists in volumes)
+#   docker compose -f setup/local-dev.yml logs -f    # tail logs
+#
+# `restart: unless-stopped` means both containers come back automatically after a reboot or
+# Docker Desktop restart — so `bench start` / `yarn dev` no longer fail with
+# ECONNREFUSED (Redis) or "Can't connect to MySQL" (MariaDB) after your machine restarts.
+
+name: fgito-crm-dev
+
+services:
+  mariadb:
+    image: mariadb:10.8
+    container_name: fgito-crm-mariadb
+    restart: unless-stopped
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --skip-character-set-client-handshake
+      - --skip-innodb-read-only-compressed
+    environment:
+      # Only applied on the FIRST init of an EMPTY volume. The existing volume is already
+      # initialized (root password "123"), so this is a no-op on adoption — it just keeps a
+      # fresh setup consistent. Override for a new machine: DB_ROOT_PASSWORD=... docker compose up -d
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-123}
+    ports:
+      # 127.0.0.1 ONLY — the DB must never be reachable from the LAN (unlike the Vite dev
+      # server, which we intentionally bind to 0.0.0.0). Native bench connects via 127.0.0.1.
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-uroot", "-p${DB_ROOT_PASSWORD:-123}", "--silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:alpine
+    container_name: fgito-crm-redis
+    restart: unless-stopped
+    ports:
+      # 127.0.0.1 only — same reasoning as the DB above.
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  # Adopt the data volumes from the original hand-created containers (external: true) so NO
+  # data is lost when you move to compose management. These names come from the two ad-hoc
+  # compose projects the containers were originally created under (`db-stack`, `fgito-crm-dev`).
+  #
+  # Starting FRESH on a new machine instead? Delete both `external`/`name` lines below and
+  # compose will create clean, empty volumes (fgito-crm-dev_mariadb-data / _redis-data) — then
+  # load data with `bench restore` or by seeding a new site.
+  mariadb-data:
+    external: true
+    name: db-stack_mariadb-data
+  redis-data:
+    external: true
+    name: fgito-crm-dev_redis-data

@@ -9,7 +9,7 @@ The image is **built on the VM from the pulled git branch** — no registry, no 
    You (Mac)          GitHub            VM (Azure, existing)
    git push ────────► main ──► git pull ─┐
                                           ├─ build image (local)
-                                          ├─ docker compose up  (db+redis+crm)  → 127.0.0.1:8080
+                                          ├─ docker-compose up  (db+redis+crm)  → 127.0.0.1:8080
    Browser ─ https://crm.fgito.com ─► your nginx (TLS) ─────────► 127.0.0.1:8080
 ```
 
@@ -90,7 +90,7 @@ On your Mac: `git push origin main`. Then on the VM, one command:
 ```bash
 cd ~/fgito-crm/deploy && ./redeploy.sh
 ```
-Pulls latest code → rebuilds the image → `docker compose up -d` → `bench migrate` (schema + your
+Pulls latest code → rebuilds the image → `docker-compose up -d` → `bench migrate` (schema + your
 idempotent seeds) → restarts services. nginx keeps routing; no nginx change needed for code updates.
 
 ---
@@ -98,17 +98,17 @@ idempotent seeds) → restarts services. nginx keeps routing; no nginx change ne
 ## Operations
 | Task | Command (on the VM, in `deploy/`) |
 |---|---|
-| Logs | `docker compose logs -f backend` |
-| Status | `docker compose ps` |
-| Bench shell | `docker compose exec backend bash` |
-| Manual migrate | `docker compose exec backend bench --site crm.fgito.com migrate` |
-| **Backup** | `docker compose exec backend bench --site crm.fgito.com backup --with-files` |
-| Restart | `docker compose restart backend frontend` |
-| Stop (keep data) | `docker compose down` |
+| Logs | `docker-compose logs -f backend` |
+| Status | `docker-compose ps` |
+| Bench shell | `docker-compose exec backend bash` |
+| Manual migrate | `docker-compose exec backend bench --site crm.fgito.com migrate` |
+| **Backup** | `docker-compose exec backend bench --site crm.fgito.com backup --with-files` |
+| Restart | `docker-compose restart backend frontend` |
+| Stop (keep data) | `docker-compose down` |
 
 **Nightly backup cron** (VM `crontab -e`), then copy dumps to Azure Blob:
 ```
-0 2 * * * cd ~/fgito-crm/deploy && docker compose exec -T backend bench --site crm.fgito.com backup --with-files
+0 2 * * * cd ~/fgito-crm/deploy && docker-compose exec -T backend bench --site crm.fgito.com backup --with-files
 ```
 
 ---
@@ -117,12 +117,12 @@ idempotent seeds) → restarts services. nginx keeps routing; no nginx change ne
 | Symptom | Fix |
 |---|---|
 | Build OOM / killed | VM low on RAM — free memory or size up; build wants a few GB. |
-| `curl 127.0.0.1:8080` fails | Stack not up — `docker compose ps`, `docker compose logs backend frontend`. |
+| `curl 127.0.0.1:8080` fails | Stack not up — `docker-compose ps`, `docker-compose logs backend frontend`. |
 | 502 from nginx | Container not ready or wrong port — confirm `HTTP_PORT=8080` and the stack is up. |
 | CRM realtime not updating | nginx block must forward `Upgrade`/`Connection` headers (it does — don't strip them). |
 | Cert not issued | DNS must resolve to the VM + port 80 reachable; re-run `sudo certbot --nginx -d crm.fgito.com`. |
 | `create-site` "site exists" | Normal on re-runs — idempotent, skips. |
-| Migrate errors | `docker compose logs backend`; seeds are wrapped in try/except so they log, not crash. |
+| Migrate errors | `docker-compose logs backend`; seeds are wrapped in try/except so they log, not crash. |
 
 ## Security
 - Never commit `.env` (DB/admin passwords) — it lives only on the VM (git-ignored).
