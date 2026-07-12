@@ -1,17 +1,22 @@
 <template>
   <Dropdown :options="dropdownItems" v-bind="$attrs">
+    <template #group-label="{ group }">
+      <div class="text-sm leading-none text-ink-gray-7 truncate pl-1">
+        {{ group.group }}
+      </div>
+    </template>
     <template #default="{ open }">
       <button
-        class="flex h-12 items-center rounded-md py-2 duration-300 ease-in-out"
+        class="flex h-12 items-center rounded-md duration-300 ease-in-out"
         :class="
           isCollapsed
             ? 'w-auto px-0'
             : open
-              ? 'w-full px-2 bg-surface-base shadow-sm'
-              : 'w-full px-2 hover:bg-surface-gray-3'
+              ? 'w-full pr-2 bg-surface-base shadow-sm'
+              : 'w-full pr-2 hover:bg-surface-gray-3'
         "
       >
-        <BrandLogo v-model="brand" class="h-8 max-w-16 flex-shrink-0" />
+        
         <div
           class="flex flex-1 flex-col text-left duration-300 ease-in-out truncate"
           :class="
@@ -20,12 +25,10 @@
               : 'ml-2 w-auto opacity-100'
           "
         >
-          <div class="text-base-medium leading-none text-ink-gray-9 truncate">
+          <!-- <div class="text-base-medium leading-none text-ink-gray-9 truncate">
             {{ __(brand.name || 'CRM') }}
-          </div>
-          <div class="mt-1 text-sm leading-none text-ink-gray-7 truncate">
-            {{ user.full_name }}
-          </div>
+          </div> -->
+          <BrandLogo v-model="brand" class="h-8 max-w-16 flex-shrink-0" />
         </div>
         <div
           class="duration-300 ease-in-out"
@@ -75,8 +78,8 @@ const dropdownItems = computed(() => {
 
   let _dropdownItems = [
     {
-      group: 'Dropdown Items',
-      hideLabel: true,
+      group: user.value.full_name,
+      hideLabel: false,
       items: [],
     },
   ]

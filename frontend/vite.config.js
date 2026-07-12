@@ -78,6 +78,9 @@ export default defineConfig(async ({ mode }) => {
       ],
     },
     server: {
+      // Listen on 0.0.0.0 so other devices on the same WiFi/LAN can open the
+      // dev server at http://<lan-ip>:8080/crm (e.g. to demo to a teammate).
+      host: true,
       fs: {
         // allow the bench `apps/` dir so Vite can serve linked local packages
         // (frappe-ui, @framework/ui) that live in sibling app repos
