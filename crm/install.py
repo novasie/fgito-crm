@@ -32,6 +32,10 @@ def after_install(force=False):
 	create_assignment_rule_custom_fields()
 	add_assignment_rule_property_setters()
 
+	from crm.setup.defaults import apply_fgito_defaults
+
+	apply_fgito_defaults()
+
 	from crm.setup.lead_config import apply_fgito_lead_config
 
 	apply_fgito_lead_config()

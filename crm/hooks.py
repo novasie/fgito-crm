@@ -303,6 +303,7 @@ after_migrate = [
 	"crm.fcrm.doctype.fcrm_settings.fcrm_settings.after_migrate",
 	"crm.api.whatsapp.add_roles",
 	"crm.install.add_default_scripts",
+	"crm.setup.defaults.apply_fgito_defaults",
 	"crm.setup.branding.apply_fgito_branding",
 	"crm.setup.lead_config.apply_fgito_lead_config",
 	"crm.setup.call_config.apply_fgito_call_config",
