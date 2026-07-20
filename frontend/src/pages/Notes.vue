@@ -62,6 +62,29 @@
           editor-class="prose-sm text-p-sm max-w-none text-ink-gray-5 focus:outline-none"
           class="flex-1 overflow-hidden"
         />
+        <div
+          v-if="note.first_name || note.mobile_no || note.organization"
+          class="flex flex-col gap-1 text-sm text-ink-gray-7"
+        >
+          <div
+            v-if="note.first_name"
+            class="flex items-center gap-2 truncate"
+          >
+            <ContactIcon class="h-4 w-4 shrink-0 text-ink-gray-5" />
+            <span class="truncate">{{ note.first_name }}</span>
+          </div>
+          <div v-if="note.mobile_no" class="flex items-center gap-2 truncate">
+            <PhoneIcon class="h-4 w-4 shrink-0 text-ink-gray-5" />
+            <span class="truncate">{{ note.mobile_no }}</span>
+          </div>
+          <div
+            v-if="note.organization"
+            class="flex items-center gap-2 truncate"
+          >
+            <OrganizationsIcon class="h-4 w-4 shrink-0 text-ink-gray-5" />
+            <span class="truncate">{{ note.organization }}</span>
+          </div>
+        </div>
         <div class="mt-2 flex items-center justify-between gap-2">
           <div class="flex items-center gap-2">
             <UserAvatar :user="note.owner" size="xs" />
@@ -96,6 +119,9 @@ import ViewBreadcrumbs from '@/components/ViewBreadcrumbs.vue'
 import LayoutHeader from '@/components/LayoutHeader.vue'
 import UserAvatar from '@/components/UserAvatar.vue'
 import NoteIcon from '@/components/Icons/NoteIcon.vue'
+import ContactIcon from '@/components/Icons/ContactIcon.vue'
+import PhoneIcon from '@/components/Icons/PhoneIcon.vue'
+import OrganizationsIcon from '@/components/Icons/OrganizationsIcon.vue'
 import ViewControls from '@/components/ViewControls.vue'
 import { useDoctypeModal } from '@/composables/doctypeModal'
 import EmptyState from '@/components/ListViews/EmptyState.vue'
