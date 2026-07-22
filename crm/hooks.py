@@ -175,6 +175,7 @@ doc_events = {
 		"on_update": ["crm.api.whatsapp.on_update"],
 	},
 	"CRM Lead": {
+		"validate": ["crm.api.lead_obstacle.validate"],
 		"on_update": ["crm.fcrm.doctype.fcrm_note.fcrm_note.sync_reference_notes"],
 	},
 	"CRM Deal": {
