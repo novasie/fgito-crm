@@ -1,8 +1,9 @@
 <template>
   <div v-if="brand?.logo">
-    <img :src="brand.logo" class="h-full w-full object-cover" />
+    <!-- object-contain (not cover) so the whole logo shows at its true aspect ratio -->
+    <img :src="brand.logo" class="h-full w-full object-contain object-left" />
   </div>
-  <CRMLogo v-else class="size-10 shrink-0 rounded" />
+  <CRMLogo v-else class="size-20 shrink-0 rounded" />
 </template>
 
 <script setup>

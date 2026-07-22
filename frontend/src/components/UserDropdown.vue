@@ -7,7 +7,7 @@
     </template>
     <template #default="{ open }">
       <button
-        class="flex h-12 items-center rounded-md duration-300 ease-in-out"
+        class="flex h-20 items-center rounded-md duration-300 ease-in-out"
         :class="
           isCollapsed
             ? 'w-auto px-0'
@@ -28,7 +28,7 @@
           <!-- <div class="text-base-medium leading-none text-ink-gray-9 truncate">
             {{ __(brand.name || 'CRM') }}
           </div> -->
-          <BrandLogo v-model="brand" class="h-8 max-w-16 flex-shrink-0" />
+          <BrandLogo v-model="brand" class="h-16 max-w-32 flex-shrink-0" />
         </div>
         <div
           class="duration-300 ease-in-out"
